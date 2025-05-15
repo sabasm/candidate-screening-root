@@ -12,7 +12,6 @@ source .venv/bin/activate
 
 # Install Python dependencies
 pip install -r llm/requirements.txt
-pip install pytest-asyncio
 
 # Install Node.js dependencies
 cd app && npm install
