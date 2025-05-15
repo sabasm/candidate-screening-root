@@ -1,23 +1,24 @@
 {
- "name": "candidate-screening-root",
- "version": "0.1.0",
- "private": true,
- "workspaces": [
-   "app"
- ],
- "scripts": {
-   "dev": "scripts/start-dev.sh",
-   "install:all": "pip install -r llm/requirements.txt && cd app && npm install",
-   "build": "cd app && npm run build",
-   "start": "cd app && npm run start",
-   "test": "jest app/src/services/__tests__/apiClient.test.ts app/src/app/api/score/__tests__/route.test.mock.ts && pytest llm/tests/"
- },
- "devDependencies": {
-   "jest": "^29.5.0",
-   "jest-environment-jsdom": "^29.5.0",
-   "babel-jest": "^29.5.0",
-   "@types/jest": "^29.5.0"
- }
+  "name": "candidate-screening-root",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "app"
+  ],
+  "scripts": {
+    "dev": "scripts/start-dev.sh",
+    "setup": "scripts/setup.sh",
+    "install:all": "pip install -r llm/requirements.txt && cd app && npm install",
+    "build": "cd app && npm run build",
+    "start": "cd app && npm run start",
+    "test": "jest app/src/services/__tests__/apiClient.test.ts app/src/app/api/score/__tests__/route.test.mock.ts && pytest llm/tests/"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "babel-jest": "^29.5.0",
+    "@types/jest": "^29.5.0"
+  }
 }
 
 

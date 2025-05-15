@@ -36,35 +36,28 @@ This application enables recruiters to submit a job description and receive a ra
    cd candidate-screening-root
    ```
 
-2. Install all dependencies:
+2. Run the setup script to install all dependencies and create the environment file:
 
    ```bash
-   npm run install:all
+   npm run setup
    ```
 
-   This installs both Python and JavaScript dependencies.
+   This installs both Python and JavaScript dependencies and creates a default `.env` file.
 
 3. Set up environment variables:
 
-   Create a `.env` file in the root directory with:
-
-   ```bash
-   # Copy the example environment file and edit with your values
-   cp .env.example .env
-   ```
-
-   Then edit the `.env` file with your values:
+   The setup script creates a `.env` file from `.env.example`. Edit this file with your values:
 
    ```bash
    # Required: OpenAI API Key
    LLM_API_KEY=your_openai_api_key_here
-   
+
    # Optional: Configure LLM model (default: gpt-4)
    LLM_MODEL=gpt-4
-   
+
    # Optional: Cache time-to-live in seconds (default: 600)
    CACHE_TTL=600
-   
+
    # Optional: LLM API URL for frontend to use
    NEXT_PUBLIC_LLM_API_URL=http://localhost:8000
    ```
@@ -81,6 +74,16 @@ This starts both the Python FastAPI server (for LLM integration) and the Next.js
 
 - Frontend: <http://localhost:3000>
 - Backend API: <http://localhost:8000>
+
+## Running Tests
+
+Run the test suite with:
+
+```bash
+npm test
+```
+
+This will run both the JavaScript and Python tests to verify the system's functionality.
 
 ## Usage
 
@@ -163,7 +166,7 @@ candidate-screening-root/
 │   ├── services/             # Core services (scoring, parsing)
 │   ├── utils/                # Helper utilities
 │   └── config.py             # Configuration settings
-├── app/                      # Next.js frontend application 
+├── app/                      # Next.js frontend application
 │   └── src/                  # Application source code
 ├── data/                     # Candidate data files
 ├── config/                   # Configuration files
@@ -263,17 +266,18 @@ Expected output:
 
 ### Challenges & Solutions
 
-1. **Challenge**: Handling rate limits from OpenAI API  
+1. **Challenge**: Handling rate limits from OpenAI API
    **Solution**: Implemented exponential backoff retry logic with configurable max retries
 
-2. **Challenge**: Inconsistent JSON formatting in LLM responses  
+2. **Challenge**: Inconsistent JSON formatting in LLM responses
    **Solution**: Added robust JSON parsing with fallback to few-shot examples when parsing fails
 
-3. **Challenge**: Large number of candidates requiring multiple API calls  
+3. **Challenge**: Large number of candidates requiring multiple API calls
    **Solution**: Implemented batch processing with configurable batch size and parallel processing capabilities
 
-4. **Challenge**: Repetitive API calls for the same job description  
+4. **Challenge**: Repetitive API calls for the same job description
    **Solution**: Added in-memory caching with TTL to reduce redundant API calls and improve response time
 
-5. **Challenge**: Text preprocessing for optimal token usage  
+5. **Challenge**: Text preprocessing for optimal token usage
    **Solution**: Created utilities for text normalization, HTML cleanup, and candidate deduplication
+
