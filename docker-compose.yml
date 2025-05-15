@@ -14,6 +14,10 @@ services:
      - .env
    environment:
      - PYTHONUNBUFFERED=1
+     - LLM_API_KEY=${LLM_API_KEY:-}
+     - LLM_MODEL=${LLM_MODEL:-gpt-4}
+     - CACHE_TTL=${CACHE_TTL:-600}
+     - USE_PROD=${USE_PROD:-false}
    networks:
      - app-network
    healthcheck:
@@ -37,6 +41,7 @@ services:
    environment:
      - NEXT_PUBLIC_LLM_API_URL=http://llm:8000
      - NEXT_PUBLIC_CLIENT_LLM_API_URL=http://localhost:8000
+     - NEXT_USE_PROD=${NEXT_USE_PROD:-false}
    networks:
      - app-network
    depends_on:
@@ -52,5 +57,3 @@ services:
 networks:
  app-network:
    driver: bridge
-
-
