@@ -82,7 +82,6 @@ Thumbs.db
 .cache/
 
 # Data
-data/*.csv
 data/*.gz
 data/*.zip
 
