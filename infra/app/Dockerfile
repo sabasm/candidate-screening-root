@@ -3,7 +3,7 @@ FROM node:18-alpine
 WORKDIR /app
 
 COPY app/package*.json ./app/
-RUN cd app && npm ci
+RUN cd app && npm install
 
 COPY app ./app
 

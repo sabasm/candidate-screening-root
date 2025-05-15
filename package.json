@@ -6,7 +6,7 @@
     "app"
   ],
   "scripts": {
-    "dev": "cd app && npm run dev",
+    "dev": "scripts/start-dev.sh",
     "build": "cd app && npm run build",
     "start": "cd app && npm run start",
     "test": "jest && pytest llm/tests/"
