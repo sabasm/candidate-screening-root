@@ -1,0 +1,64 @@
+[
+ {
+   "id": 1,
+   "name": "John Doe",
+   "resume": "Full-stack developer with 5 years of experience in React, Node.js, and Python. Led a team of 3 developers to build a customer-facing application that increased sales by 30%."
+ },
+ {
+   "id": 2,
+   "name": "Jane Smith",
+   "resume": "Software engineer specializing in machine learning and data science with Python and TensorFlow. Published research on efficient neural network architectures."
+ },
+ {
+   "id": 3,
+   "name": "Alex Johnson",
+   "resume": "Frontend developer with expertise in React, TypeScript, and responsive design. Created accessible UI components used across multiple enterprise applications."
+ },
+ {
+   "id": 4,
+   "name": "Sarah Williams",
+   "resume": "DevOps engineer with experience in AWS, Docker, and CI/CD pipelines. Reduced deployment time by 70% and implemented infrastructure as code practices."
+ },
+ {
+   "id": 5,
+   "name": "Michael Brown",
+   "resume": "Backend developer specializing in Node.js and MongoDB. Built scalable APIs handling millions of requests per day."
+ },
+ {
+   "id": 6,
+   "name": "Emily Davis",
+   "resume": "UX/UI designer with frontend development skills in HTML, CSS, and JavaScript. Created design systems that improved consistency across products."
+ },
+ {
+   "id": 7,
+   "name": "Robert Wilson",
+   "resume": "Mobile developer with experience in React Native and Flutter. Published multiple apps with 4+ star ratings on app stores."
+ },
+ {
+   "id": 8,
+   "name": "Lisa Anderson",
+   "resume": "Data engineer with skills in ETL pipelines, SQL, and Python. Implemented data warehousing solutions that improved reporting efficiency by 50%."
+ },
+ {
+   "id": 9,
+   "name": "David Taylor",
+   "resume": "Security specialist with experience in penetration testing and secure coding practices. CISSP certified with focus on application security."
+ },
+ {
+   "id": 10,
+   "name": "Jennifer Martin",
+   "resume": "Product manager with technical background in software development. Led agile teams to deliver products that increased user engagement by 40%."
+ },
+ {
+   "id": 11,
+   "name": "Thomas Clark",
+   "resume": "QA engineer with automation expertise using Selenium and Cypress. Developed comprehensive test suites that caught critical bugs before production."
+ },
+ {
+   "id": 12,
+   "name": "Olivia White",
+   "resume": "Full-stack JavaScript developer with React and Node.js experience. Built e-commerce platforms with integrated payment solutions."
+ }
+]
+
+
