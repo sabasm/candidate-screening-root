@@ -82,12 +82,15 @@ async def score_candidates(request: JobDescriptionRequest):
 
         candidates = get_candidates()
 
-        try:
-            from .candidate_scorer import score_candidates as llm_score_candidates
+        if USE_PROD:
+            try:
+                from .candidate_scorer import score_candidates as llm_score_candidates
 
-            results = await llm_score_candidates(job_description, candidates)
-        except Exception as e:
-            logging.exception("Error with LLM scoring")
+                results = await llm_score_candidates(job_description, candidates)
+            except Exception as e:
+                logging.exception("Error with LLM scoring")
+                results = generate_mock_results(job_description, candidates)
+        else:
             results = generate_mock_results(job_description, candidates)
 
         cache[job_description] = (time.time(), results)
